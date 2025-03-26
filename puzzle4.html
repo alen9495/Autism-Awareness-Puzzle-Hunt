@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>World Autism Awareness Day Puzzle Hunt</title>
+<style>
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background-image: url('autism_background.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #333;
+    padding: 20px;
+}
+
+#puzzle {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 10px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #42a5f5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#nextPuzzle {
+    display: none;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#nextPuzzle.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+img {
+    max-width: 75%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#appreciationText { 
+	display: none; margin-top: 10px; 
+	opacity: 0; 
+	transform: translateY(20px); 
+	transition: opacity 0.5s ease-in-out, 
+	transform 0.5s ease-in-out; 
+}
+
+#appreciationText.visible { 
+	display: block; 
+	opacity: 1; 
+	transform: translateY(0); 
+}
+
+
+h1 {
+    color: #42a5f5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+</style>
+</head>
+<body>
+
+<h1>CWL1 World Autism Awareness Day Puzzle Hunt</h1>
+    <div id="puzzle">
+        <img src="clock_image.jpg" alt="Clock Image">
+		<p><strong>Puzzle 4:</strong></p>
+        <p>Visual Brain Teasers:</p>
+  <p>How many Square do yo see?</p>
+    <input type="text" id="password1" placeholder="Enter Answer">
+    <button onclick="checkPassword1()">Submit</button>
+	<p id="appreciationText">Outstanding! </p>
+    <button id="nextPuzzle" onclick="location.href='puzzle5.html'">Next Puzzle</button>
+</div>
+
+<script>
+    function checkPassword1() {
+        var password = document.getElementById("password1").value.toLowerCase();
+        if (password === "Fourty" || password === "40") {
+            document.getElementById("nextPuzzle").classList.add("visible");
+			document.getElementById("appreciationText").classList.add("visible");
+        } else {
+            alert("Incorrect answer. Try again.");
+        }
+    }
+</script>
+
+</body>
+</html>

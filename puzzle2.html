@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>World Autism Awareness Day Puzzle Hunt</title>
+<style>
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background-image: url('autism_background.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #333;
+    padding: 20px;
+}
+
+#puzzle {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 10px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #42a5f5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#nextPuzzle {
+    display: none;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#nextPuzzle.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+img {
+    max-width: 75%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#appreciationText { 
+	display: none; margin-top: 10px; 
+	opacity: 0; 
+	transform: translateY(20px); 
+	transition: opacity 0.5s ease-in-out, 
+	transform 0.5s ease-in-out; 
+}
+
+#appreciationText.visible { 
+	display: block; 
+	opacity: 1; 
+	transform: translateY(0); 
+}
+
+h1 {
+    color: #FF0000;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+</style>
+</head>
+<body>
+
+<h1>CWL1 World Autism Awareness Day Puzzle Hunt</h1>
+
+<div id="puzzle">
+    <img src="cipher_image.jpg" alt="Cipher Image">
+    <h2>The Reversed Letters</h2>
+    <p><strong>Puzzle 2:</strong></p>
+    <p>Using the following cipher, decode the word:</p>
+    <p>A=Z, B=Y, C=X</p>
+    <p>Decode the following coded word:</p>
+    <p>GSRMT</p>
+    <input type="text" id="password2" placeholder="Enter Answer">
+    <button onclick="checkPassword2()">Submit</button>
+	<p id="appreciationText">Sensational!</p>
+    <button id="nextPuzzle" onclick="location.href='puzzle3.html'">Next Puzzle</button>
+</div>
+
+<script>
+function checkPassword2() {
+    var password = document.getElementById("password2").value.toLowerCase();
+    var nextPuzzleButton = document.getElementById("nextPuzzle"); // Get the button element
+
+    if (password === "trust") {
+        document.getElementById("nextPuzzle").classList.add("visible");
+		document.getElementById("appreciationText").classList.add("visible");
+    } else {
+        alert("Incorrect word. Try again.");
+    }
+}
+</script>
+
+</body>
+</html>
